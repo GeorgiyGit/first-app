@@ -1,0 +1,36 @@
+<header>
+    <nav>
+        <div>
+            <h1>Logo</h1>
+            <ul>
+                <li><a routerLink="/home">Home</a></li>
+                <li><a routerLink="/events" class="events">Events</a></li>
+                <li><a routerLink="/places" class="places">Places</a></li>
+                <li *ngIf="accountService.isAuthenticated()" class="dropdown">
+                    <a href="javascript:void(0)" class="dropbtn">Manager</a>
+
+                    <div class="dropdown-content">
+                        <ul>
+                            <li><a class="unSelect">Manager</a></li>
+                            <li><a routerLink="/add-place">Add Place</a></li>
+                            <li><a routerLink="/add-event">Add Event</a></li>
+                            <li><a routerLink="/add-genre">Add Genre</a></li>
+                            <li><a routerLink="/places-edit">Places</a></li>
+                            <li><a routerLink="/events-edit">Events</a></li> 
+                            <li><a routerLink="/favorite-places">Favorite Places</a></li>
+                            <li><a routerLink="/favorite-events">Favorite Events</a></li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <ul>
+            <li><a routerLink="/sign-up">Sign Up</a></li>
+
+            <li>
+                <a *ngIf="!accountService.isAuthenticated()" routerLink="/log-in">Log In</a>
+                <a *ngIf="accountService.isAuthenticated()" (click)="logout()" class="unSelect">Log out</a>
+            </li>
+        </ul>
+    </nav>
+</header>

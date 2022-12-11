@@ -1,0 +1,20 @@
+<div>
+    <div class="w-100">
+        <div class="input-cont">
+            <i class="material-icons" translate="no">format_list_bulleted</i>
+            <input type="text" list="codes" (change)="select($event)" placeholder="{{placeholder}}">
+            <datalist id="codes">
+                <option [value]="" ></option>
+                  <option *ngFor="let g of genres" [value]="g.name" >{{g.name}}</option>
+                </datalist>
+        </div>
+    </div>
+
+
+    <div class="selected-genres">
+        <div class="genre-cont" *ngFor="let genre of selectedGenres">
+            <p>{{genre.name}}</p>
+            <i class="material-icons" translate="no" style="font-size:20px;" (click)="unSelect(genre)">close</i>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,25 @@
+.remove{
+    border: 0;
+    border-radius: 5px;
+    padding: 5px 20px;
+    background-color: #e27767;
+    color: white;
+}
+.remove:hover{
+    background-color: #d93b3b;
+}
+.favorites{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 600px;
+    padding: 20px;
+}
+.favorites>div{
+    background-color: #edb874;
+    border-radius: 5px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    color: white;
+}

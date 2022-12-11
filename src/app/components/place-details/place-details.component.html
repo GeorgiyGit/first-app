@@ -1,0 +1,43 @@
+<section>
+    <div>
+        <h2>{{place.name}}</h2>
+        <div>
+            <div *ngFor="let type in place.types">
+                <p>{{type.name}}</p>
+            </div>
+        </div>
+        <p>{{place.text}}</p>
+        <div class="navigation">
+            <a href={{place.site}}>
+                <i class="material-icons" translate="no">preview</i>
+                <p>Site</p>
+            </a>
+            <a href={{place.facebook}}>
+                <img src="assets/images/green-icons/facebook_green_icon.png" alt="" class="icon">
+                <p>Facebook</p>
+            </a>
+            <a href={{place.instagram}}>
+                <img src="assets/images/green-icons/instagram_green_icon.png" alt="" class="icon">
+                <p>Instagram</p>
+            </a>
+        </div>
+        <p>{{place.googleMaps}}</p>
+        <p>{{place.route}}</p>
+
+        <div *ngIf="this.accountService.isAuthenticated()">
+            <button *ngIf="isFavorite" class="remove" (click)="removeFavorite()">Remove From Favorite</button>
+            <button *ngIf="!isFavorite" class="add" (click)="addFavorite()">Add To Favorite</button>
+        </div>
+        <div *ngIf="this.accountService.isAuthenticated()">
+            <app-add-comment [parentId]="undefined"
+                             [placeId]="place.id"></app-add-comment>
+        </div>
+        <div>
+            <app-comments [placeId]="place.id"
+                          [eventId]="undefined"></app-comments>
+        </div>
+    </div>
+    <div>
+
+    </div>
+</section>

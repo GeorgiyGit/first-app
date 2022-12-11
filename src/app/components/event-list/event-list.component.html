@@ -1,0 +1,22 @@
+<section class="events-list">
+    <h1>Event List</h1>
+    <div class="input">
+        <i class="material-icons" translate="no">search</i>
+        <input type="text" (keyup)="filterChange($event)">
+    </div>
+
+    <div class="card-cont">
+        <div class="card event-back" *ngFor="let event of filteredEvents">
+            <a (click)="click(event.id)">
+                <div class="img-cont">
+                    <p *ngFor="let type of event.types | slice:0:3" class="type">{{type.name}}</p>
+                </div>
+                <div class="main-card-cont event-back">
+                    <p><strong>{{event.title}}</strong></p>
+                    <p>{{event.eventTime}}</p>
+                    <p>{{event.route}}</p>
+                </div>
+            </a>
+        </div>
+    </div>
+</section>

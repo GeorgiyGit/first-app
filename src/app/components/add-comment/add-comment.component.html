@@ -1,0 +1,13 @@
+<form [formGroup]="commentForm" (ngSubmit)="sumbit()">
+    <div class="w-100">
+        <div class="input-cont">
+            <textarea name="text" id="text" cols="30" rows="10" formControlName="text" placeholder="Comment"></textarea>
+        </div>
+        <div *ngIf="text.invalid && (text.touched)">
+            <p *ngIf="text.errors?.['required']" class="error">Comment is required.</p>
+            <p *ngIf="text.errors?.['minlength']" class="error">Minimum length is 10</p>
+            <p *ngIf="text.errors?.['maxlength']" class="error">Maximum length is 3000</p>
+        </div>
+    </div>
+    <button type="submit" class="add">Create</button>
+</form>

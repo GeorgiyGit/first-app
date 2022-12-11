@@ -1,0 +1,23 @@
+
+<section>
+    <form [formGroup]="genreForm" (ngSubmit)="sumbit()">
+        <h2>Add Type</h2>
+        <div class="inputs">
+            <div class="w-100">
+                <div class="input-cont">
+                    <i class="material-icons" translate="no">title</i>
+                    <input id="name" type="text" formControlName="name" placeholder="Name">
+                </div>
+                <div *ngIf="name.invalid && (name.touched)">
+                    <p *ngIf="name.errors?.['required']" class="error">Name is required.</p>
+                    <p *ngIf="name.errors?.['minlength']" class="error">Minimum length is 3</p>
+                    <p *ngIf="name.errors?.['maxlength']" class="error">Maximum length is 100</p>
+                </div>
+            </div>
+            <div class="w-100">
+                <app-genres-select (selectedGenreEvent)="addParent($event)" [placeholder]="placeholder"></app-genres-select>
+            </div>
+            <button type="submit">Add Type</button>
+        </div>
+    </form>
+</section>

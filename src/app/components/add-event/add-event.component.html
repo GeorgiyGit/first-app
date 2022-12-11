@@ -1,0 +1,84 @@
+<section class="add-place">
+    <form [formGroup]="eventForm" (ngSubmit)="sumbit()">
+        <h2>Add Event</h2>
+        <div class="inputs">
+
+            <div class="w-100">
+                <div class="input-cont">
+                    <i class="material-icons" translate="no">title</i>
+                    <input id="title" type="text" formControlName="title" placeholder="Title">
+                </div>
+                <div *ngIf="title.invalid && (title.touched)">
+                    <p *ngIf="title.errors?.['required']" class="error">Title is required.</p>
+                    <p *ngIf="title.errors?.['minlength']" class="error">Minimum length is 5</p>
+                    <p *ngIf="title.errors?.['maxlength']" class="error">Maximum length is 300</p>
+                </div>
+            </div>
+
+            <div class="w-100">
+                <div class="input-cont">
+                    <i class="material-icons" translate="no">description</i>
+                    <textarea name="text" id="text" cols="30" rows="10" formControlName="text" placeholder="Description"></textarea>
+                </div>
+                <div *ngIf="text.invalid && (text.touched)">
+                    <p *ngIf="text.errors?.['required']" class="error">Description is required.</p>
+                    <p *ngIf="text.errors?.['minlength']" class="error">Minimum length is 10</p>
+                    <p *ngIf="text.errors?.['maxlength']" class="error">Maximum length is 3000</p>
+                </div>
+            </div>
+
+            <div class="w-100">
+                <div class="input-cont">
+                    <div class="checkbox">
+                        <label>Online?</label>
+                        <input id="route" type="checkbox" formControlName="isOnline" (change)="checkChange()">
+                    </div>
+                </div>
+            </div>
+
+            <div class="w-100" *ngIf="!isOnline2">
+                <app-select-place (selectePlaceEvent)="selectPlace($event)"></app-select-place>
+            </div>
+
+            <div class="w-100">
+                <div class="input-cont">
+                    <i class="material-icons" translate="no">preview</i>
+                    <input id="site" type="url" formControlName="site" placeholder="Site">
+                </div>
+            </div>
+
+            <div class="w-100">
+                <div class="input-cont">
+                    <img class="icon" src="assets/images/green-icons/facebook_green_icon.png" alt="facebook-icon">
+                    <input id="facebook" type="url" formControlName="facebook" placeholder="Facebook">
+                </div>
+            </div>
+
+            <div class="w-100">
+                <div class="input-cont">
+                    <img class="icon" src="assets/images/green-icons/instagram_green_icon.png" alt="facebook-icon">
+                    <input id="instagram" type="url" formControlName="instagram" placeholder="Instagram">
+                </div>
+            </div>
+
+            <div class="w-100">
+                <div class="input-cont">
+                    <i class="material-icons" translate="no">schedule</i>
+                    <input id="instagram" type="date" formControlName="eventTime" placeholder="Event Time">
+                </div>
+            </div>
+
+            <div class="w-100">
+                <div class="input-cont">
+                    <i class="material-icons" translate="no">payments</i>
+                    <input id="price" type="number" formControlName="price" placeholder="Price" min="0" step="10">
+                </div>
+            </div>
+
+            <div class="w-100">
+                <app-genres-select (selectedGenreEvent)="addGenre($event)" [placeholder]="placeholder"></app-genres-select>
+            </div>
+        </div>
+        <button type="submit">Let's start</button>
+    </form>
+</section>

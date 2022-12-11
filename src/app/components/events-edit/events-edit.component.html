@@ -1,0 +1,51 @@
+<section class="place-edit">
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Title</th>
+                <th>Text</th>
+                <th>Place id</th>
+                <th>Is Online</th>
+
+                <th>Full rating</th>
+
+                <th>Site</th>
+                <th>Facebook</th>
+                <th>Instagram</th>
+
+                <th>Event Time</th>
+                <th>Owner User Name</th>
+                <th>Types</th>
+                <th>Liked Users Count</th>
+                <th>Images</th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let event of events">
+                <th>{{event.id}}</th>
+                <th>{{event.title}}</th>
+                <th>{{event.text}}</th>
+                <th>{{event.placeId}}</th>
+                <th>{{event.isOnline}}</th>
+                <th>{{event.fullRating}}</th>
+                <th>{{event.site}}</th>
+                <th>{{event.facebook}}</th>
+                <th>{{event.instagram}}</th>
+                <th>{{event.eventTime}}</th>
+                <th>{{event.ownerUserName}}</th>
+                <th>
+                    <ul>
+                        <li *ngFor="let type of event.types">{{type.name}}</li>
+                    </ul>
+                </th>
+                <th>{{event.likedUsers.length}}</th>
+                <th></th>
+                <th><button (click)="deletePlace(event.id)" class="delete">Delete</button></th>
+                <th><button (click)="editPlace(event.id)" class="edit">Edit</button></th>
+            </tr>
+        </tbody>
+    </table>
+</section>

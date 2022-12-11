@@ -1,0 +1,19 @@
+<div>
+    <div class="comment" *ngFor="let com of comments">
+        <div class="head">
+            <div>
+                <img src="resources/img1.png" alt="Avatar">
+                <p>{{com.ownerUserName}}</p>
+                <p>{{com.creationTime}}</p>
+                <p>{{com.isChanged?"changed":""}}</p>
+            </div>
+            <i class="material-icons" translate="no">more_vert</i>
+        </div>
+        <p>{{com.text}}</p>
+        <div class="footer">
+            <i class="material-icons" translate="no">thumb_up</i>
+            <i class="material-icons" translate="no">thumb_down</i>
+            <p><a href="">відповісти</a></p>
+        </div>
+    </div>
+</div>

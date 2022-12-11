@@ -1,0 +1,20 @@
+<section class="place-list">
+    <h1>Place List</h1>
+    <div class="input">
+        <i class="material-icons" translate="no">search</i>
+        <input type="text" (keyup)="filterChange($event)">
+    </div>
+    <div class="card-cont">
+        <div *ngFor="let place of filteredPlaces" class="card place-back">
+            <a (click)="click(place.id)">
+                <div class="img-cont">
+                    <p *ngFor="let type of place.types | slice:0:3" class="type">{{type.name}}</p>
+                </div>
+                <div class="main-card-cont place-back">
+                    <p><strong>{{place.name}}</strong></p>
+                    <p>{{place.route}}</p>
+                </div>
+            </a>
+        </div>
+    </div>
+</section>

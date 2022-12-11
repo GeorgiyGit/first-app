@@ -1,0 +1,36 @@
+footer{
+    background-color: #e8998d;
+    color: white;
+    padding: 20px;
+    flex-grow: 0;
+}
+footer .flex{
+    display: flex;
+    gap: 10px;
+}
+.flex .lists{
+    display: flex;
+    gap: 5px;
+    justify-content: space-between;
+    width: 100%;
+}
+footer ul{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+li,p,h2{
+    font-size: 1.5em;
+}
+footer p{
+    color: #f5dab7;
+    font-weight: bold;
+    margin-bottom: 3px;
+}
+hr{
+    color: white;
+    border-color: white;
+}
+.center{
+    text-align: center;
+}

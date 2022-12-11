@@ -1,0 +1,10 @@
+.add{
+    border: 0;
+    border-radius: 5px;
+    padding: 5px;
+    background-color: #5f8f7f;
+    color: white;
+}
+.add:hover{
+    background-color: #497f6d;
+}

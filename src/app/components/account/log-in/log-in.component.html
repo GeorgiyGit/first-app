@@ -1,0 +1,64 @@
+<section class="log-in">
+    <form [formGroup]="logInForm" (ngSubmit)="logIn()">
+        <h2>Log In</h2>
+        <div class="inputs">
+            <div class="w-100">
+                <div class="input-cont">
+                    <i class="material-icons" translate="no">mail</i>
+                    <input id="email" type="email" formControlName="email" placeholder="Email">
+                </div>
+                <div *ngIf="email.invalid && (email.touched)">
+                    <p *ngIf="email.errors?.['required']" class="error">Email is required.</p>
+                    <p *ngIf="email.errors?.['minlength']" class="error">Minimum length is 5</p>
+                    <p *ngIf="email.errors?.['maxlength']" class="error">Maximum length is 200</p>
+                </div>
+            </div>
+            <div class="w-100">
+                <div class="password-cont">
+                    <div>
+                        <i class="material-icons" translate="no">lock</i>
+                        <input *ngIf="!isPassVisible" id="password" type="password" userCapture formControlName="password" placeholder="Password">
+                        <input *ngIf="isPassVisible" id="password" type="text" userCapture formControlName="password" placeholder="Password">
+                    </div>
+                    <i *ngIf="isPassVisible" class="material-icons eye-icon" translate="no" (click)="eyeClick()">visibility_off</i>
+                    <i *ngIf="!isPassVisible" class="material-icons eye-icon" translate="no" (click)="eyeClick()">visibility</i>
+                </div>
+                <div *ngIf="password.invalid && (password.touched)">
+                    <p *ngIf="password.errors?.['required']" class="error">Password is required.</p>
+                    <p *ngIf="password.errors?.['pattern']" class="error">Password must have 8 symbols, letter and one extra symbol </p>
+                </div>
+            </div>
+        </div>
+        <button type="submit">Log in</button>
+        <div class="hrs">
+            <div></div>
+            <p class="position-top-1">or</p>
+            <div></div>
+        </div>
+        <div class="outher-cont">
+
+            <a href="">
+                <div class="google">
+                    <img src="assets/images/google-icon.png" alt="google-icon">
+                    <p>Log in with Google</p>
+                </div>
+            </a>
+
+            <a href="">
+                <div class="apple">
+                    <img src="assets/images/apple-icon.png" alt="apple-icon">
+                    <p>Log in with Apple</p>
+                </div>
+            </a>
+
+            <a href="">
+                <div class="facebook">
+                    <div><img src="assets/images/facebook-icon.png" alt="facebook-icon"></div>
+                    <p>Log in with Facebook</p>
+                </div>
+            </a>
+        </div>
+        <p class="mb-0">Already have an account? <a class="link" routerLink="/log-in">Log In</a></p>
+        <p class="acceptance">I accept the site <a class="link">Terms of Service</a> and agree to the <a class="link">Privacy Policy</a>.</p>
+    </form>
+</section>

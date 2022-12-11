@@ -1,0 +1,76 @@
+h2{
+    color: #e3a04a;
+    font-size: 2em;
+    text-align: center;
+}
+section{
+    padding: 10px;
+    color: #e3a04a;
+    margin-bottom: 500px;
+    display: flex;
+}
+section>div{
+    flex: 1;
+}
+.navigation{
+    background-color: rgb(246, 243, 243);
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 0 3px 0.5px gray;
+    color: #5f8f7f;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.remove{
+    border: 0;
+    border-radius: 5px;
+    padding: 5px;
+    background-color: #e27767;
+    color: white;
+}
+.remove:hover{
+    background-color: #d93b3b;
+}
+
+.add{
+    border: 0;
+    border-radius: 5px;
+    padding: 5px;
+    background-color: #5f8f7f;
+    color: white;
+}
+.add:hover{
+    background-color: #497f6d;
+}
+.icon{
+    height: 20px;
+    width: 20px;
+    padding: 2px;
+}
+a{
+    color: white;
+    text-decoration: none;
+}
+a:active{
+    text-decoration: none;
+    color: white;
+}
+.navigation a{
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+.navigation p{
+    color: #7ca799;
+    margin: 0;
+}
+.navigation p:hover{
+    color: #5f8f7f;
+}
+.navigation p:active{
+    color: #497f6d;
+}
+i{
+    color: #497f6d;
+}

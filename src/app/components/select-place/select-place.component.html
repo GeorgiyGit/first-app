@@ -1,0 +1,10 @@
+<div class="w-100">
+    <div class="input-cont">
+        <i class="material-icons" translate="no">format_list_bulleted</i>
+        <input type="text" list="placesList" (change)="select($event)" placeholder="Places">
+        <datalist id="placesList">
+            <option [value]="" ></option>
+              <option *ngFor="let g of places" [value]="g.name" >{{g.name}}</option>
+            </datalist>
+    </div>
+</div>

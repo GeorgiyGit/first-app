@@ -1,0 +1,52 @@
+<section class="place-edit">
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Text</th>
+                <th>Route</th>
+                <th>Full Rating</th>
+                <th>Site</th>
+                <th>Facebook</th>
+                <th>Instagram</th>
+                <th>Google Maps</th>
+                <th>Owner User Name</th>
+                <th>Types</th>
+                <th>Liked Users Count</th>
+                <th>Events</th>
+                <th>Images</th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let place of places">
+                <th>{{place.id}}</th>
+                <th>{{place.name}}</th>
+                <th>{{place.text}}</th>
+                <th>{{place.route}}</th>
+                <th>{{place.fullRating}}</th>
+                <th>{{place.site}}</th>
+                <th>{{place.facebook}}</th>
+                <th>{{place.instagram}}</th>
+                <th>{{place.googleMaps}}</th>
+                <th>{{place.ownerUserName}}</th>
+                <th>
+                    <ul>
+                        <li *ngFor="let type of place.types">{{type.name}}</li>
+                    </ul>
+                </th>
+                <th>{{place.likedUsers.length}}</th>
+                <th>
+                    <ul>
+                        <li *ngFor="let event of place.events">{{event}}</li>
+                    </ul>
+                </th>
+                <th></th>
+                <th><button (click)="deletePlace(place.id)" class="delete">Delete</button></th>
+                <th><button (click)="editPlace(place.id)" class="edit">Edit</button></th>
+            </tr>
+        </tbody>
+    </table>
+</section>

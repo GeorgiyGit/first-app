@@ -1,0 +1,27 @@
+<section>
+    <h2>{{event.title}}</h2>
+    <div>
+        <div *ngFor="let type in event.types">
+            <p>{{type.name}}</p>
+        </div>
+    </div>
+    <p>{{event.text}}</p>
+    <div class="navigation">
+        <p>{{event.site}}</p>
+        <p>{{event.facebook}}</p>
+        <p>{{event.instagram}}</p>
+    </div>
+    <p>{{event.placeId}}</p>
+    <p>{{event.ownerUserName}}</p>
+    <div *ngIf="this.accountService.isAuthenticated()" class="mt-1">
+        <button *ngIf="isFavorite" class="remove" (click)="removeFavorite()">Remove From Favorite</button>
+        <button *ngIf="!isFavorite" class="add" (click)="addFavorite()">Add To Favorite</button>
+    </div>
+    <div *ngIf="this.accountService.isAuthenticated()">
+        <app-add-comment [parentId]="undefined"
+                         [eventId]="event.id"></app-add-comment>
+    </div>
+    <div>
+        <app-comments [eventId]="event.id"></app-comments>
+    </div>
+</section>
