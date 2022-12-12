@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiUrl: "https://delightful-rock-098cdb610.2.azurestaticapps.net/",
+  apiUrl: "https://events-rivne.azurewebsites.net/",
   emailMinLength:10,
   emailMaxLength:200,
   
