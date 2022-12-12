@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiUrl: "https://localhost:7144/api/"
+  apiUrl: "https://delightful-rock-098cdb610.2.azurestaticapps.net/"
 };

@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiUrl: "https://localhost:7144/api/",
+  apiUrl: "https://delightful-rock-098cdb610.2.azurestaticapps.net/",
   emailMinLength:10,
   emailMaxLength:200,
   
